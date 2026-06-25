@@ -3,3 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأملات في آية الكرسي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
+                    quran: ['"Amiri"', 'serif'],
+                },
+                colors: {
+                    apple: {
+                        light: '#F5F3EF',
+                        dark: '#111827'
+                    },
+                    quran: {
+                        bg: '#F8F6F1',
+                        text: '#31473A',
+                        border: '#D6CFC2'
+                    },
+                    lang: {
+                        bg: '#F4EFE7',
+                        accent: '#8B6F47'
+                    },
+                    tafsir: {
+                        bg: '#F3F4F6',
+                        accent: '#6B7280'
+                    },
+                    reflect: {
+                        bg: '#1F2937',
+                        text: '#F9FAFB',
+                        gold: '#C6A96B'
+                    },
+                    hadith: {
+                        bg: '#F5F7F4',
+                        accent: '#4B6B4E'
+                    },
+                    aqeedah: {
+                        bg: '#EEF4F1',
+                        accent: '#2F5D50'
+                    },
+                    benefit: {
+                        bg: '#F7F3EA',
+                        accent: '#A17635'
+                    },
+                    grammar: {
+                        bg: '#F6F1E8',
+                        accent: '#7C5E36'
+                    }
+                },
+                boxShadow: {
+                    'apple': '0 8px 32px -8px rgba(0, 0, 0, 0.04), 0 4px 16px -4px rgba(0, 0, 0, 0.02)',
+                    'apple-hover': '0 20px 48px -12px rgba(0, 0, 0, 0.08), 0 12px 24px -8px rgba(0, 0, 0, 0.04)',
+                    'apple-dark': '0 8px 32px -8px rgba(0, 0, 0, 0.3)',
+                    'apple-dark-hover': '0 20px 48px -12px rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    }
+    </script>
+    <style>
+        :root { color-scheme: light; }
+        html.dark { color-scheme: dark; }
+        body { font-size: var(--reader-size, 18px); }
+        .ambient-veil {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 12% 16%, rgba(198, 169, 107, 0.22), transparent 34rem),
+                radial-gradient(circle at 88% 8%, rgba(47, 93, 80, 0.16), transparent 32rem),
+                radial-gradient(circle at 52% 100%, rgba(139, 111, 71, 0.14), transparent 40rem);
+            filter: blur(120px);
+        }
+        .dark .ambient-veil {
+            background:
+                radial-gradient(circle at 8% 14%, rgba(198, 169, 107, 0.16), transparent 34rem),
+                radial-gradient(circle at 88% 10%, rgba(47, 93, 80, 0.24), transparent 34rem),
+                radial-gradient(circle at 52% 100%, rgba(148, 163, 184, 0.13), transparent 42rem);
+        }
+        .card {
+            transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease;
+        }
+        .card:hover { transform: translateY(-0.25rem); }
+        .quran-line { line-height: 2.35; }
+        .rich-text p, .rich-text li { line-height: 2.05; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .chevron { transform: rotate(180deg); }
+        .advanced-panel details:not([open]) .advanced-body { display: none; }
+        @media print {
+            nav, .control-panel { display: none !important; }
+            body { background: white !important; }
+            .card { box-shadow: none !important; break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="font-sans bg-apple-light text-slate-900 antialiased dark:bg-apple-dark dark:text-slate-100">
+    <div class="ambient-veil" aria-hidden="true"></div>
+
+    <nav class="sticky top-0 z-50 border-b border-white/60 bg-white/72 backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/62">
+        <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+            <a href="#top" class="flex flex-col">
+                <span class="text-sm font-semibold text-slate-950 dark:text-white">تأملات في آية الكرسي</span>
+                <span class="text-xs text-slate-500 dark:text-slate-400">آية مفردة في سورة عظيمة</span>
+            </a>
+            <div class="hidden items-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-300 md:flex">
+                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#intro">المقدمة</a>
+                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#tafsir">المقاطع</a>
+                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#features">الخصائص</a>
+                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#summary">الخلاصة</a>
+            </div>
+            <div class="control-panel flex items-center gap-2">
+                <button id="toggleDetails" class="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-slate-200" type="button">التفاصيل</button>
+                <button id="fontMinus" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 text-sm font-bold shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10" type="button" aria-label="تصغير الخط">A-</button>
+                <button id="fontPlus" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 text-sm font-bold shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10" type="button" aria-label="تكبير الخط">A+</button>
+                <button id="themeToggle" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10" type="button" aria-label="الوضع الليلي">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 3v2.5M12 18.5V21M21 12h-2.5M5.5 12H3M18.36 5.64l-1.77 1.77M7.41 16.59l-1.77 1.77M18.36 18.36l-1.77-1.77M7.41 7.41 5.64 5.64" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top" class="mx-auto flex max-w-6xl flex-col gap-24 px-5 py-16 md:gap-32 md:px-8 md:py-24">
+        <section class="flex flex-col gap-10">
+            <div class="card flex flex-col gap-9 rounded-[32px] border border-white/70 bg-white/78 p-8 shadow-apple backdrop-blur-xl hover:shadow-apple-hover dark:border-white/10 dark:bg-white/5 dark:shadow-apple-dark dark:hover:shadow-apple-dark-hover md:p-16">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="rounded-full border border-quran-border bg-quran-bg px-4 py-2 text-sm font-semibold text-quran-text">آية</span>
+                    <span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300">سورة البقرة</span>
+                    <span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300">الآية الخامسة والخمسون بعد المئتين</span>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <p class="text-sm font-semibold tracking-wide text-benefit-accent">آية عظيمة في التوحيد والعظمة وسعة الصفات</p>
+                    <h1 class="max-w-5xl text-5xl font-bold leading-[1.35] text-slate-950 dark:text-white md:text-7xl">تأملات في آية الكرسي</h1>
+                    <p class="max-w-5xl text-xl leading-[2] text-slate-700 dark:text-slate-300">آية مفردة من سورة عظيمة، هي أعظم آية في القرآن الكريم، وحوت كثيرًا من معاني التوحيد والعظمة وسعة الصفات لله عز وجل.</p>
+                </div>
+                <div class="rounded-[30px] border border-quran-border bg-quran-bg p-8 text-center text-quran-text md:p-12">
+                    <p class="font-quran quran-line text-3xl font-bold md:text-5xl">﴿اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+        const fontPlus = document.getElementById('fontPlus');
+        const fontMinus = document.getElementById('fontMinus');
+        const toggleDetails = document.getElementById('toggleDetails');
+        const savedTheme = localStorage.getItem('kursi-theme');
+        const savedFont = Number(localStorage.getItem('kursi-font') || 18);
+        const savedDetails = localStorage.getItem('kursi-details');
+
+        if (savedTheme === 'dark') {
+            root.classList.add('dark');
+        }
+
+        const setReaderSize = (size) => {
+            const nextSize = Math.min(22, Math.max(16, size));
+            document.body?.style.setProperty('--reader-size', `${nextSize}px`);
+            localStorage.setItem('kursi-font', String(nextSize));
+        };
+
+        const setAllDetails = (open) => {
+            document.querySelectorAll('.advanced-panel details')?.forEach((detail) => {
+                detail.open = open;
+            });
+            localStorage.setItem('kursi-details', open ? 'open' : 'closed');
+        };
+
+        setReaderSize(savedFont);
+        if (savedDetails === 'open') {
+            setAllDetails(true);
+        }
+
+        themeToggle?.addEventListener('click', () => {
+            root.classList.toggle('dark');
+            localStorage.setItem('kursi-theme', root.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        fontPlus?.addEventListener('click', () => {
+            const current = Number(localStorage.getItem('kursi-font') || 18);
+            setReaderSize(current + 1);
+        });
+
+        fontMinus?.addEventListener('click', () => {
+            const current = Number(localStorage.getItem('kursi-font') || 18);
+            setReaderSize(current - 1);
+        });
+
+        toggleDetails?.addEventListener('click', () => {
+            const details = Array.from(document.querySelectorAll('.advanced-panel details'));
+            const shouldOpen = details.some((detail) => !detail.open);
+            setAllDetails(shouldOpen);
+        });
+    </script>
+</body>
+</html>
