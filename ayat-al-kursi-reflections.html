@@ -1,212 +1,238 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تأملات في آية الكرسي</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                fontFamily: {
-                    sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
-                    quran: ['"Amiri"', 'serif'],
-                },
-                colors: {
-                    apple: {
-                        light: '#F5F3EF',
-                        dark: '#111827'
-                    },
-                    quran: {
-                        bg: '#F8F6F1',
-                        text: '#31473A',
-                        border: '#D6CFC2'
-                    },
-                    lang: {
-                        bg: '#F4EFE7',
-                        accent: '#8B6F47'
-                    },
-                    tafsir: {
-                        bg: '#F3F4F6',
-                        accent: '#6B7280'
-                    },
-                    reflect: {
-                        bg: '#1F2937',
-                        text: '#F9FAFB',
-                        gold: '#C6A96B'
-                    },
-                    hadith: {
-                        bg: '#F5F7F4',
-                        accent: '#4B6B4E'
-                    },
-                    aqeedah: {
-                        bg: '#EEF4F1',
-                        accent: '#2F5D50'
-                    },
-                    benefit: {
-                        bg: '#F7F3EA',
-                        accent: '#A17635'
-                    },
-                    grammar: {
-                        bg: '#F6F1E8',
-                        accent: '#7C5E36'
-                    }
-                },
-                boxShadow: {
-                    'apple': '0 8px 32px -8px rgba(0, 0, 0, 0.04), 0 4px 16px -4px rgba(0, 0, 0, 0.02)',
-                    'apple-hover': '0 20px 48px -12px rgba(0, 0, 0, 0.08), 0 12px 24px -8px rgba(0, 0, 0, 0.04)',
-                    'apple-dark': '0 8px 32px -8px rgba(0, 0, 0, 0.3)',
-                    'apple-dark-hover': '0 20px 48px -12px rgba(0, 0, 0, 0.5)'
-                }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تأملات في آية الكرسي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    darkMode: 'class',
+    theme: {
+        extend: {
+            fontFamily: { sans: ['"IBM Plex Sans Arabic"', 'sans-serif'], quran: ['"Amiri"', 'serif'] },
+            colors: {
+                apple: { light: '#F5F3EF', dark: '#111827' },
+                quran: { bg: '#F8F6F1', text: '#31473A', border: '#D6CFC2' },
+                lang: { bg: '#F4EFE7', accent: '#8B6F47' },
+                tafsir: { bg: '#F3F4F6', accent: '#6B7280' },
+                reflect: { bg: '#1F2937', text: '#F9FAFB', gold: '#C6A96B' },
+                hadith: { bg: '#F5F7F4', accent: '#4B6B4E' },
+                aqeedah: { bg: '#EEF4F1', accent: '#2F5D50' },
+                benefit: { bg: '#F7F3EA', accent: '#A17635' },
+                grammar: { bg: '#F6F1E8', accent: '#7C5E36' }
+            },
+            boxShadow: {
+                'apple': '0 8px 32px -8px rgba(0, 0, 0, 0.04), 0 4px 16px -4px rgba(0, 0, 0, 0.02)',
+                'apple-hover': '0 20px 48px -12px rgba(0, 0, 0, 0.08), 0 12px 24px -8px rgba(0, 0, 0, 0.04)',
+                'apple-dark': '0 8px 32px -8px rgba(0, 0, 0, 0.3)',
+                'apple-dark-hover': '0 20px 48px -12px rgba(0, 0, 0, 0.5)'
             }
         }
     }
-    </script>
-    <style>
-        :root { color-scheme: light; }
-        html.dark { color-scheme: dark; }
-        body { font-size: var(--reader-size, 18px); }
-        .ambient-veil {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-            background:
-                radial-gradient(circle at 12% 16%, rgba(198, 169, 107, 0.22), transparent 34rem),
-                radial-gradient(circle at 88% 8%, rgba(47, 93, 80, 0.16), transparent 32rem),
-                radial-gradient(circle at 52% 100%, rgba(139, 111, 71, 0.14), transparent 40rem);
-            filter: blur(120px);
-        }
-        .dark .ambient-veil {
-            background:
-                radial-gradient(circle at 8% 14%, rgba(198, 169, 107, 0.16), transparent 34rem),
-                radial-gradient(circle at 88% 10%, rgba(47, 93, 80, 0.24), transparent 34rem),
-                radial-gradient(circle at 52% 100%, rgba(148, 163, 184, 0.13), transparent 42rem);
-        }
-        .card {
-            transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease;
-        }
-        .card:hover { transform: translateY(-0.25rem); }
-        .quran-line { line-height: 2.35; }
-        .rich-text p, .rich-text li { line-height: 2.05; }
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] .chevron { transform: rotate(180deg); }
-        .advanced-panel details:not([open]) .advanced-body { display: none; }
-        @media print {
-            nav, .control-panel { display: none !important; }
-            body { background: white !important; }
-            .card { box-shadow: none !important; break-inside: avoid; }
-        }
-    </style>
+}
+</script>
+<style>
+:root { color-scheme: light; }
+html.dark { color-scheme: dark; }
+body { font-size: var(--reader-size, 18px); }
+.ambient-veil { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; filter: blur(120px); background: radial-gradient(circle at 12% 16%, rgba(198,169,107,.22), transparent 34rem), radial-gradient(circle at 88% 8%, rgba(47,93,80,.16), transparent 32rem), radial-gradient(circle at 52% 100%, rgba(139,111,71,.14), transparent 40rem); }
+.dark .ambient-veil { background: radial-gradient(circle at 8% 14%, rgba(198,169,107,.16), transparent 34rem), radial-gradient(circle at 88% 10%, rgba(47,93,80,.24), transparent 34rem), radial-gradient(circle at 52% 100%, rgba(148,163,184,.13), transparent 42rem); }
+.read-progress { position: fixed; top: 0; right: 0; z-index: 70; width: var(--read-progress, 0%); height: 3px; background: linear-gradient(90deg,#C6A96B,#2F5D50,#8B6F47); box-shadow: 0 0 18px rgba(198,169,107,.45); transition: width 160ms ease; }
+.card-hover, .passage-card, .info-card { transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease; }
+.card-hover:hover, .passage-card:hover, .info-card:hover { transform: translateY(-.25rem); }
+.quran-line { line-height: 2.35; }
+.reader-line { line-height: 2.05; text-wrap: pretty; border-radius: 16px; transition: background-color 180ms ease, box-shadow 180ms ease; }
+.reader-line:hover { background: rgba(255,255,255,.42); box-shadow: 0 0 0 .65rem rgba(255,255,255,.42); }
+.dark .reader-line:hover { background: rgba(255,255,255,.07); box-shadow: 0 0 0 .65rem rgba(255,255,255,.07); }
+.focus-line { background: rgba(198,169,107,.13)!important; box-shadow: 0 0 0 .7rem rgba(198,169,107,.13)!important; }
+.section-kicker { position: relative; width: fit-content; }
+.section-kicker::after { content:''; position:absolute; inset-inline-start:0; bottom:-.45rem; width:68%; height:2px; border-radius:999px; background:linear-gradient(90deg,#C6A96B,transparent); }
+.passage-card { position: relative; isolation: isolate; overflow: hidden; display:flex; flex-direction:column; gap:28px; border-radius:32px; border:1px solid rgba(214,207,194,.8); padding:32px; background: linear-gradient(140deg,rgba(255,255,255,.94),rgba(255,255,255,.78)), radial-gradient(circle at 0 0,rgba(198,169,107,.16),transparent 24rem); box-shadow: 0 8px 32px -8px rgba(0,0,0,.04), 0 4px 16px -4px rgba(0,0,0,.02); }
+.dark .passage-card { border-color: rgba(255,255,255,.1); background: linear-gradient(140deg,rgba(15,23,42,.84),rgba(17,24,39,.72)), radial-gradient(circle at 0 0,rgba(198,169,107,.10),transparent 24rem); }
+.passage-card::after { content:''; position:absolute; top:0; bottom:0; inset-inline-start:3.1rem; width:1px; z-index:-1; background:linear-gradient(180deg,transparent,rgba(198,169,107,.4),transparent); }
+.passage-card.is-current { border-color: rgba(198,169,107,.55); box-shadow: 0 24px 70px -32px rgba(139,111,71,.38), 0 12px 28px -18px rgba(0,0,0,.14); }
+.passage-number { position:absolute; top:1.5rem; inset-inline-start:1.5rem; z-index:1; width:3.25rem; height:3.25rem; display:grid; place-items:center; border-radius:999px; border:1px solid rgba(198,169,107,.38); background:rgba(248,246,241,.86); color:#8B6F47; font-weight:800; font-size:.95rem; }
+.dark .passage-number { background:rgba(31,41,55,.84); color:#C6A96B; }
+.quran-card { overflow:hidden; border-radius:28px; border:1px solid #D6CFC2; background:#F8F6F1; color:#31473A; padding:32px; text-align:center; box-shadow: inset 0 0 0 1px rgba(255,255,255,.62), 0 18px 48px -32px rgba(49,71,58,.45); }
+.quran-card p { font-size: clamp(2rem,4vw,3.15rem); font-weight:700; }
+.quran-mini { border-radius:20px; border:1px solid rgba(214,207,194,.7); background:rgba(248,246,241,.7); color:#31473A; padding:18px; text-align:center; }
+.quran-mini p { font-size: clamp(1.45rem,2.4vw,2.1rem); font-weight:700; }
+.passage-grid { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:18px; }
+.info-card { position:relative; overflow:hidden; display:flex; flex-direction:column; gap:14px; border-radius:26px; padding:26px; border:1px solid rgba(255,255,255,.55); box-shadow: 0 8px 32px -20px rgba(0,0,0,.12); }
+.info-card h3 { display:flex; align-items:center; gap:.7rem; font-size:1.15rem; font-weight:800; }
+.info-card h3::before { content:''; width:.72rem; height:.72rem; flex:0 0 auto; border-radius:999px; background:currentColor; box-shadow:0 0 0 6px rgba(198,169,107,.10); }
+.info-card::after { content:''; position:absolute; inset-block:1.2rem; inset-inline-start:0; width:4px; border-radius:999px; background:currentColor; opacity:.25; }
+.card-body { display:flex; flex-direction:column; gap:12px; }
+.tafsir-card { background:#F3F4F6; color:#374151; }
+.lang-card { background:#F4EFE7; color:#7C5E36; }
+.aqeedah-card { background:#EEF4F1; color:#2F5D50; }
+.benefit-card { background:#F7F3EA; color:#A17635; }
+.hadith-card { background:#F5F7F4; color:#4B6B4E; }
+.reflect-card { grid-column: 1 / -1; background:linear-gradient(135deg,rgba(31,41,55,.98),rgba(17,24,39,.94)); color:#F9FAFB; }
+.reflect-card::before { content:'بلاغة'; position:absolute; top:1rem; inset-inline-end:1rem; border:1px solid rgba(198,169,107,.38); border-radius:999px; padding:.32rem .75rem; color:#C6A96B; font-size:.78rem; font-weight:700; background:rgba(255,255,255,.05); }
+.reflect-card h3 { color:#C6A96B; }
+.reflect-card .reader-line { border-inline-start:1px solid rgba(198,169,107,.24); padding-inline-start:1rem; }
+.grammar-card { background:#F6F1E8; color:#7C5E36; }
+details > summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; font-weight:800; }
+details > summary::-webkit-details-marker { display:none; }
+.chevron { width:1rem; height:1rem; transition:transform 180ms ease; }
+details[open] .chevron { transform:rotate(180deg); }
+.detail-body { margin-top:16px; display:flex; flex-direction:column; gap:12px; color:#374151; }
+.dark .detail-body { color:#E5E7EB; }
+.muted { opacity:.72; }
+@media (max-width: 820px) { .passage-grid { grid-template-columns: 1fr; } .passage-card { padding:24px; } .passage-number { position:static; } }
+@media print { nav,.control-panel,.read-progress { display:none!important; } .passage-card,.info-card { box-shadow:none!important; break-inside:avoid; } }
+</style>
 </head>
 <body class="font-sans bg-apple-light text-slate-900 antialiased dark:bg-apple-dark dark:text-slate-100">
-    <div class="ambient-veil" aria-hidden="true"></div>
-
-    <nav class="sticky top-0 z-50 border-b border-white/60 bg-white/72 backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/62">
-        <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
-            <a href="#top" class="flex flex-col">
-                <span class="text-sm font-semibold text-slate-950 dark:text-white">تأملات في آية الكرسي</span>
-                <span class="text-xs text-slate-500 dark:text-slate-400">آية مفردة في سورة عظيمة</span>
-            </a>
-            <div class="hidden items-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-300 md:flex">
-                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#intro">المقدمة</a>
-                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#tafsir">المقاطع</a>
-                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#features">الخصائص</a>
-                <a class="transition hover:text-slate-950 dark:hover:text-white" href="#summary">الخلاصة</a>
-            </div>
-            <div class="control-panel flex items-center gap-2">
-                <button id="toggleDetails" class="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10 dark:text-slate-200" type="button">التفاصيل</button>
-                <button id="fontMinus" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 text-sm font-bold shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10" type="button" aria-label="تصغير الخط">A-</button>
-                <button id="fontPlus" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 text-sm font-bold shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10" type="button" aria-label="تكبير الخط">A+</button>
-                <button id="themeToggle" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 shadow-sm transition hover:bg-white dark:border-white/10 dark:bg-white/10" type="button" aria-label="الوضع الليلي">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M12 3v2.5M12 18.5V21M21 12h-2.5M5.5 12H3M18.36 5.64l-1.77 1.77M7.41 16.59l-1.77 1.77M18.36 18.36l-1.77-1.77M7.41 7.41 5.64 5.64" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <main id="top" class="mx-auto flex max-w-6xl flex-col gap-24 px-5 py-16 md:gap-32 md:px-8 md:py-24">
-        <section class="flex flex-col gap-10">
-            <div class="card flex flex-col gap-9 rounded-[32px] border border-white/70 bg-white/78 p-8 shadow-apple backdrop-blur-xl hover:shadow-apple-hover dark:border-white/10 dark:bg-white/5 dark:shadow-apple-dark dark:hover:shadow-apple-dark-hover md:p-16">
-                <div class="flex flex-wrap items-center gap-3">
-                    <span class="rounded-full border border-quran-border bg-quran-bg px-4 py-2 text-sm font-semibold text-quran-text">آية</span>
-                    <span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300">سورة البقرة</span>
-                    <span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300">الآية الخامسة والخمسون بعد المئتين</span>
-                </div>
-                <div class="flex flex-col gap-6">
-                    <p class="text-sm font-semibold tracking-wide text-benefit-accent">آية عظيمة في التوحيد والعظمة وسعة الصفات</p>
-                    <h1 class="max-w-5xl text-5xl font-bold leading-[1.35] text-slate-950 dark:text-white md:text-7xl">تأملات في آية الكرسي</h1>
-                    <p class="max-w-5xl text-xl leading-[2] text-slate-700 dark:text-slate-300">آية مفردة من سورة عظيمة، هي أعظم آية في القرآن الكريم، وحوت كثيرًا من معاني التوحيد والعظمة وسعة الصفات لله عز وجل.</p>
-                </div>
-                <div class="rounded-[30px] border border-quran-border bg-quran-bg p-8 text-center text-quran-text md:p-12">
-                    <p class="font-quran quran-line text-3xl font-bold md:text-5xl">﴿اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        const root = document.documentElement;
-        const themeToggle = document.getElementById('themeToggle');
-        const fontPlus = document.getElementById('fontPlus');
-        const fontMinus = document.getElementById('fontMinus');
-        const toggleDetails = document.getElementById('toggleDetails');
-        const savedTheme = localStorage.getItem('kursi-theme');
-        const savedFont = Number(localStorage.getItem('kursi-font') || 18);
-        const savedDetails = localStorage.getItem('kursi-details');
-
-        if (savedTheme === 'dark') {
-            root.classList.add('dark');
-        }
-
-        const setReaderSize = (size) => {
-            const nextSize = Math.min(22, Math.max(16, size));
-            document.body?.style.setProperty('--reader-size', `${nextSize}px`);
-            localStorage.setItem('kursi-font', String(nextSize));
-        };
-
-        const setAllDetails = (open) => {
-            document.querySelectorAll('.advanced-panel details')?.forEach((detail) => {
-                detail.open = open;
-            });
-            localStorage.setItem('kursi-details', open ? 'open' : 'closed');
-        };
-
-        setReaderSize(savedFont);
-        if (savedDetails === 'open') {
-            setAllDetails(true);
-        }
-
-        themeToggle?.addEventListener('click', () => {
-            root.classList.toggle('dark');
-            localStorage.setItem('kursi-theme', root.classList.contains('dark') ? 'dark' : 'light');
-        });
-
-        fontPlus?.addEventListener('click', () => {
-            const current = Number(localStorage.getItem('kursi-font') || 18);
-            setReaderSize(current + 1);
-        });
-
-        fontMinus?.addEventListener('click', () => {
-            const current = Number(localStorage.getItem('kursi-font') || 18);
-            setReaderSize(current - 1);
-        });
-
-        toggleDetails?.addEventListener('click', () => {
-            const details = Array.from(document.querySelectorAll('.advanced-panel details'));
-            const shouldOpen = details.some((detail) => !detail.open);
-            setAllDetails(shouldOpen);
-        });
-    </script>
+<div class="read-progress" aria-hidden="true"></div>
+<div class="ambient-veil" aria-hidden="true"></div>
+<nav class="sticky top-0 z-50 border-b border-white/60 bg-white/72 backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/62">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+    <a href="#top" class="flex flex-col"><span class="text-sm font-semibold text-slate-950 dark:text-white">تأملات في آية الكرسي</span><span class="text-xs text-slate-500 dark:text-slate-400">آية مفردة في سورة عظيمة</span></a>
+    <div class="hidden items-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-300 md:flex"><a href="#intro">المقدمة</a><a href="#tafsir">المقاطع</a><a href="#features">الخصائص</a><a href="#summary">الخلاصة</a></div>
+    <div class="control-panel flex items-center gap-2"><button id="toggleDetails" class="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-semibold text-slate-700 shadow-sm dark:border-white/10 dark:bg-white/10 dark:text-slate-200" type="button">الإعراب</button><button id="fontMinus" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 text-sm font-bold shadow-sm dark:border-white/10 dark:bg-white/10" type="button">A-</button><button id="fontPlus" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 text-sm font-bold shadow-sm dark:border-white/10 dark:bg-white/10" type="button">A+</button><button id="themeToggle" class="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white/80 shadow-sm dark:border-white/10 dark:bg-white/10" type="button">☼</button></div>
+  </div>
+</nav>
+<main id="top" class="mx-auto flex max-w-6xl flex-col gap-24 px-5 py-16 md:gap-32 md:px-8 md:py-24">
+<section class="flex flex-col gap-10">
+  <div class="card-hover flex flex-col gap-9 rounded-[32px] border border-white/70 bg-white/78 p-8 shadow-apple backdrop-blur-xl hover:shadow-apple-hover dark:border-white/10 dark:bg-white/5 dark:shadow-apple-dark md:p-16">
+    <div class="flex flex-wrap items-center gap-3"><span class="rounded-full border border-quran-border bg-quran-bg px-4 py-2 text-sm font-semibold text-quran-text">آية</span><span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300">سورة البقرة</span><span class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/10 dark:text-slate-300">الآية الخامسة والخمسون بعد المئتين</span></div>
+    <div class="flex flex-col gap-6"><p class="section-kicker text-sm font-semibold tracking-wide text-benefit-accent">آية عظيمة في التوحيد والعظمة وسعة الصفات</p><h1 class="max-w-5xl text-5xl font-bold leading-[1.35] text-slate-950 dark:text-white md:text-7xl">تأملات في آية الكرسي</h1><p class="max-w-5xl text-xl leading-[2] text-slate-700 dark:text-slate-300">آية مفردة من سورة عظيمة، هي أعظم آية في القرآن الكريم، وحوت كثيرًا من معاني التوحيد والعظمة وسعة الصفات لله عز وجل.</p></div>
+    <div class="quran-card"><p class="font-quran quran-line">﴿اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾</p></div>
+  </div>
+</section>
+<section id="intro" class="flex flex-col gap-10"><div class="flex flex-col gap-3"><p class="section-kicker text-sm font-semibold text-benefit-accent">المقدمة العامة</p><h2 class="text-4xl font-bold text-slate-950 dark:text-white md:text-5xl">مكانة الآية وفضلها وسياقها</h2></div><div class="grid gap-6 lg:grid-cols-2"><div class="info-card tafsir-card"><h3>التعريف بالآية</h3><div class="card-body"><p class="reader-line">آية الكرسي آية مفردة في سورة عظيمة، وهي سورة البقرة، ورقمها الآية الخامسة والخمسون بعد المئتين.</p>
+<p class="reader-line">سُمّيت آية الكرسي لذكر الكرسي فيها، بل لم يُذكر الكرسي في القرآن الكريم إلا في هذه الآية.</p>
+<p class="reader-line">اهتم العلماء بهذه الآية اهتمامًا كبيرًا؛ فبعضهم أفردها بالتفسير، وبعضهم أفردها بالكلام، واعتنوا بها حتى قال بعضهم: إنها اشتملت على ثمانية عشر اسمًا لله تعالى، ما بين اسم ظاهر واسم مضمر، أي ضمير.</p>
+<p class="reader-line">كلماتها خمسون كلمة، وجملها عشر جمل.</p></div></div>
+<div class="info-card tafsir-card"><h3>العناية بالقراءة الصحيحة</h3><div class="card-body"><p class="reader-line">هذه الآية العظيمة تتكرر بكثرة؛ لأنها من أذكار الصباح والمساء، وغير ذلك كما ورد في النص، ولهذا ينبغي للإنسان أن يعتني بالقراءة الصحيحة لها.</p>
+<p class="reader-line">من الأخطاء أن تُقرأ كلمة سِنَة بمعنى سَنة، فيختلف المعنى؛ لأن السِّنة أول النوم، وأما السَّنة فهي بمعنى العام.</p>
+<p class="reader-line">ومن الأخطاء كذلك أن ينطق بعضهم كلمة وَسِعَ بالنطق العامي، أو يخلّ بضبط كلمة كُرْسِيُّهُ.</p></div></div>
+<div class="info-card tafsir-card"><h3>فضل آية الكرسي</h3><div class="card-body"><p class="reader-line">هي أعظم آية في القرآن الكريم، كما جاء في الحديث الصحيح الذي رواه مسلم وغيره عن أُبي بن كعب رضي الله عنه أن النبي صلى الله عليه وسلم قال له: «يا أبا المنذر، أتدري أي آية في كتاب الله أعظم؟» قال: قلت: ﴿اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ﴾.</p>
+<p class="reader-line">كان أُبي رضي الله عنه من قراء الصحابة ومن علمائهم بالقرآن، فربما استشعر ذلك مما في هذه الآية من العظمة والإخلاص للتوحيد. قال: فضرب النبي صلى الله عليه وسلم في صدري، وقال: «ليهنك العلم يا أبا المنذر». ومعنى «ليهنك العلم»: أي هنيئًا لك هذا العلم.</p>
+<p class="reader-line">زاد الإمام أحمد في روايته أن النبي صلى الله عليه وسلم قال: «والذي نفسي بيده، إن لها لسانًا وشفتين تقدس الملك عند ساق العرش».</p>
+<p class="reader-line">كثر كلام العلماء في سبب ذلك، لكنه يدور على أن هذه الآية الكريمة حوت كثيرًا من معاني التوحيد والعظمة وسعة الصفات لله عز وجل، كما فُضّلت سورة الإخلاص بذلك أيضًا.</p></div></div>
+<div class="info-card tafsir-card"><h3>الحفظ والذكر</h3><div class="card-body"><p class="reader-line">جاء في الحديث الصحيح في قصة أُبي رضي الله عنه مع الجني، أنه قال له أُبي: ما الذي يجيرنا منكم؟ قال: هذه الآية، آية الكرسي. ثم غدا إلى النبي صلى الله عليه وسلم فأخبره، فقال النبي صلى الله عليه وسلم: «صدق الخبيث».</p>
+<p class="reader-line">وجاء نحو ذلك أيضًا في حديث أبي هريرة رضي الله عنه، وفيه: «صدقك وهو كذوب».</p>
+<p class="reader-line">فلا غرابة ولا عجب بعد ذلك أن تكون هذه الآية العظيمة من أذكار الصباح، وأذكار المساء، وأذكار النوم.</p>
+<p class="reader-line">وقد جاء في الحديث: «من قرأها في ليلة لم يزل عليه من الله حافظ، ولا يقربه شيطان حتى يصبح». وجاء أيضًا حديث مختلف فيه عند المحدثين في صحة فضل قراءتها بعد كل صلاة.</p></div></div>
+<div class="info-card reflect-card"><h3>مناسبة آية الكرسي لما قبلها</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿يَا أَيُّهَا الَّذِينَ آمَنُوا أَنْفِقُوا مِمَّا رَزَقْنَاكُمْ مِنْ قَبْلِ أَنْ يَأْتِيَ يَوْمٌ لَا بَيْعٌ فِيهِ وَلَا خُلَّةٌ وَلَا شَفَاعَةٌ وَالْكَافِرُونَ هُمُ الظَّالِمُونَ﴾</p></div>
+<p class="reader-line">وفي قراءة: ﴿لَا بَيْعَ فِيهِ وَلَا خُلَّةَ وَلَا شَفَاعَةَ﴾</p>
+<p class="reader-line">لما أخبر سبحانه وتعالى عن يوم القيامة، وأنه لا بيع فيه ولا خلة ولا شفاعة، وأن الكافرين هم الظالمون، أخبر بعد ذلك في هذه الآية عن جلاله وكماله وعظيم سلطانه، وأنه عز وجل هو المعبود بحق، وأن عبادته هي التي تنجي من أهوال يوم القيامة.</p>
+<p class="reader-line">هذه الآية الكريمة كأنها استئناف، أي ابتداء جديد بذكر تمجيد الله سبحانه وتعالى وذكر صفاته، إبطالًا لكفر الكافرين، وقطعًا لرجائهم؛ لأن فيها قوله تعالى: ﴿مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ﴾، فلا شفاعة لهم إلا بإذن الله، والشفاعة إنما تكون لمن أخلص التوحيد.</p>
+<p class="reader-line">جاءت هذه الآية ابتداءً لآيات تقرير الوحدانية والبعث بعدها، وجاءت بعدها عدة آيات في هذا المعنى، فصارت هذه الآية العظيمة كالبرزخ المتوسط بين الأغراض السابقة، مما سبق من أهوال يوم القيامة وما فيه من نفي الشفاعة، وبين الأغراض اللاحقة، مما فيه كلام على تمجيد الله عز وجل وذكر صفاته.</p>
+<p class="reader-line">قال شيخ الإسلام رحمه الله: إن الله عز وجل نفى عما سواه كل ما يتعلق به المشركون؛ فنفى أن يكون لغيره ملك، أو قسط من الملك، أو أن يكون عونًا لله. فلما نفى كل ذلك لم يبق إلا الشفاعة، فبيّن أنها أيضًا لا تنفع إلا لمن أذن له الرب. فهذه الشفاعة التي يظنها المشركون هي في الحقيقة منتفية يوم القيامة، كما نفى القرآن.</p></div></div></div></section>
+<section id="tafsir" class="flex flex-col gap-20"><div class="flex flex-col gap-3"><p class="section-kicker text-sm font-semibold text-benefit-accent">التفسير التفصيلي</p><h2 class="text-4xl font-bold text-slate-950 dark:text-white md:text-5xl">المقاطع بحسب ترتيب ورودها</h2></div><article class="passage-card" id="p1"><div class="passage-number">01</div><div class="quran-card"><p class="font-quran quran-line">﴿اللَّهُ لَا إِلَهَ إِلَّا هُوَ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">هذه الجملة إخبار بأن الله عز وجل هو المتفرد بالألوهية، أي المستحق للألوهية حبًا وتعظيمًا، فلا يستحق العبادة غيره سبحانه، وبقية الآية تقرير لذلك وبيان لموجباته.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">الإله هو المألوه، أي المعبود. ومعنى الجملة أن الله عز وجل هو المستحق للألوهية حبًا وتعظيمًا.</p></div></div><div class="info-card aqeedah-card"><h3>المسألة العقدية</h3><div class="card-body"><p class="reader-line">الجملة تقرر التوحيد ونفي استحقاق العبادة عن غير الله سبحانه، وفيها إخلاص للتوحيد كما استشعر أُبي رضي الله عنه عظمة هذه الآية.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">افتتحت الآية بذكر الألوهية، ثم جاءت بقية الآية تقريرًا لهذا المعنى وبيانًا لموجباته. وهذا الافتتاح داخل في ابتداء تمجيد الله سبحانه وتعالى وذكر صفاته بعد الآية السابقة.</p></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><details class="info-card grammar-card"><summary><span>الإعراب</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">الله عز وجل هو المعبود بحق، المتفرد بالألوهية، وبقية الآية تقرر هذا الأصل وتبين موجباته.</p></div></div></div></article>
+<article class="passage-card" id="p2"><div class="passage-number">02</div><div class="quran-card"><p class="font-quran quran-line">﴿الْحَيُّ الْقَيُّومُ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">المقصود إثبات الحياة والقيومية لله، لإبطال استحقاق آلهة المشركين هذين الوصفين: الحياة والقيومية. والحي القيوم اسمان جامعان لكمال الأوصاف والأفعال.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">الحي صفة مشبهة على وزن فعيل، من قولهم: حي يحيى حياة، فهو حي. وحياة الله عز وجل حياة أبدية أزلية، تليق به سبحانه وتعالى، كبقية صفاته.</p>
+<p class="reader-line">القيوم صيغة مبالغة على وزن فيعول، وهي صيغة نادرة، مأخوذة من القيام، وتدل على القيام على الشيء مع حسن تدبيره. ومعنى القيوم: كثير القيام على الشيء مع حسن تدبيره.</p></div></div><div class="info-card aqeedah-card"><h3>المسائل العقدية</h3><div class="card-body"><p class="reader-line">القيوم يشمل أنه قائم بنفسه، أي غير محتاج إلى غيره، دائم لا يزول، وأنه قائم بتدبير أمر خلقه. فجميع الموجودات مفتقرة إليه، وهو عنها غني، فلا قوام لها بدون أمره.</p>
+<p class="reader-line">هذان الاسمان الكريمان يدلان لمن تأمل فيهما جيدًا على سائر الأسماء الحسنى، دلالة مطابقة وتضمن ولزوم؛ فالأوصاف الذاتية في الحي، والأفعال المتعدية مجموعة في القيوم.</p>
+<p class="reader-line">الحي هو من له الحياة الكاملة، المستلزمة لجميع صفات الذات كالسمع والبصر والعلم والقدرة ونحو ذلك. والقيوم هو الذي قام بنفسه وقام بغيره، وذلك مستلزم لجميع الأفعال التي اتصف بها رب العالمين، من فعله ما يشاء، من الاستواء والنزول، والكلام والقول، والخلق والرزق، والإماتة والإحياء، وسائر أنواع التدبير؛ كل ذلك داخل في قيوميته سبحانه.</p>
+<p class="reader-line">قال كثير من العلماء: إن الحي القيوم هو اسم الله الأعظم الذي إذا دُعي به أجاب، وإذا سُئل به أعطى.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">جعل النص هذا المقطع جملة ثانية؛ لأن كثيرًا من أهل البلاغة يقولون: إن الحي القيوم خبر لمبتدأ محذوف تقديره: هو، فتكون الجملة بيانًا وتفسيرًا للجملة السابقة.</p>
+<p class="reader-line">من المعلوم في البلاغة أن الجملة إذا كانت بيانًا وتفسيرًا لشيء متقدم، فإنها لا تُعطف بالواو. فإذا عُطفت بالواو قالوا: موصولة، وإذا لم تكن مقرونة بالواو قالوا: مفصولة. وهذا من باب الوصل والفصل في علم المعاني.</p></div></div><div class="info-card tafsir-card"><h3>الشواهد</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿وَمِنْ آيَاتِهِ أَنْ تَقُومَ السَّمَاءُ وَالْأَرْضُ بِأَمْرِهِ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿يَا أَبَتِ لِمَ تَعْبُدُ مَا لَا يَسْمَعُ وَلَا يُبْصِرُ﴾</p></div></div></div><div class="info-card lang-card"><h3>القراءات واللغات</h3><div class="card-body"><p class="reader-line">جاء في كلمة القيوم ثلاث لغات: القيوم، وهي الأشهر، وهي قراءة الجمهور، ومنهم القراء السبعة بل العشرة. والقيام، وهي صيغة مبالغة على وزن فعّال، وقراءة لبعض الصحابة كعمر وابنه عبد الله، وعبد الله بن مسعود، وغيرهم. والقيم، وهي على صيغة فيعل، كما في قولهم: جيد، وسيد، وميت، وهي قراءة شاذة.</p>
+<p class="reader-line">في الآية قراءة متواترة وهي القيوم، وقراءتان شاذتان: القيام والقيم.</p></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><details class="info-card grammar-card"><summary><span>الإعراب</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details><div class="info-card lang-card"><h3>الصرف والاشتقاق</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">الحي القيوم اسمان جامعان لكمال الحياة وكمال التدبير، وفيهما افتقار الموجودات إلى الله وغناه عنها.</p></div></div></div></article>
+<article class="passage-card" id="p3"><div class="passage-number">03</div><div class="quran-card"><p class="font-quran quran-line">﴿لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">ليس المقصود خصوص السِّنة والنوم فقط، وإنما المراد أن من تمام حياة الله وقيوميته سبحانه أنه لا يعتريه نقص، ولا غفلة، ولا ذهول عن خلقه الذين يقوم بشأنهم؛ بل هو قائم على كل نفس بما كسبت، شهيد على كل شيء، لا يغيب عنه شيء، ولا تخفى عليه خافية.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">تأخذه: تغلبه وتعتليه. يقال: أخذت فلانًا، أي غلبته على أمره.</p>
+<p class="reader-line">السِّنة: أول النوم، وهو الذي يقال له: النعاس، وهو غير داخل في حد النوم، وإنما هو أول النوم.</p></div></div><div class="info-card aqeedah-card"><h3>المسائل العقدية والتربوية</h3><div class="card-body"><p class="reader-line">من تمام قيوميته سبحانه أنه لا يعتريه سِنة ولا نوم. فهو عز وجل مهيمن على من يقومه، غير غافل عنه. وهذا توكيد لكونه حيًا، فإن من أخذه سنة أو نوم كان ناقص الحياة.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية</h3><div class="card-body"><p class="reader-line">هذه الجملة بيان وتفسير لقوله تعالى: ﴿الْحَيُّ الْقَيُّومُ﴾، ولذلك جاءت مفصولة بلا واو؛ لأنها تكملة وتفسير وبيان له، وليست جملة جديدة تحتاج إلى الواو.</p>
+<p class="reader-line">تقديم السِّنة على النوم هو على ما يسمونه قياس المبالغة والترقي، أو موافقة الواقع؛ لأن المعتاد أن السِّنة، أي النعاس، تأتي قبل النوم. وإذا نُفيت السِّنة وحدها لم يكن هذا كمالًا؛ لأن الذي يقاوم السِّنة قد يغلبه النوم، فنفى السِّنة ثم ترقى إلى ما هو أقوى منها فنفى النوم.</p></div></div><div class="info-card tafsir-card"><h3>الشواهد</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿خُذُوهُ فَغُلُّوهُ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿مَا هَذَا بَشَرًا إِنْ هَذَا إِلَّا مَلَكٌ كَرِيمٌ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿فَوَسْوَسَ إِلَيْهِ الشَّيْطَانُ قَالَ يَا آدَمُ هَلْ أَدُلُّكَ عَلَى شَجَرَةِ الْخُلْدِ وَمُلْكٍ لَا يَبْلَى﴾</p></div>
+<p class="reader-line">الحديث والشعر</p>
+<p class="reader-line">قال رسول الله صلى الله عليه وسلم: «إن الله لا ينام، ولا ينبغي له أن ينام، يخفض القسط ويرفعه، يُرفع إليه عمل الليل قبل عمل النهار، وعمل النهار قبل عمل الليل، حجابه النور — أو قال: النار — لو كشفه لأحرقت سُبُحات وجهه ما انتهى إليه بصره من خلقه».</p>
+<p class="reader-line">قول عدي بن الرقاع العاملي: لولا الحياءُ وأنَّ شعري قد عثا فيه المشيبُ لزرتُ أمَّ القاسمِ. وكأنها بين النساء أعارها عينيه أحورُ من جآذر جاسمِ. وسنانُ أقصده النعاسُ فرنّقت في عينه سِنةٌ وليس بنائمِ.</p>
+<p class="reader-line">وقول الشاعر: إنما الدنيا فناءٌ، ليس للدنيا ثبوتُ.</p></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><div class="info-card lang-card"><h3>الصرف والاشتقاق</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">من تمام حياة الله وقيوميته أنه لا تأخذه سنة ولا نوم، ولا يغفل عن خلقه، والجملة بيان لما قبلها بلا واو.</p></div></div></div></article>
+<article class="passage-card" id="p4"><div class="passage-number">04</div><div class="quran-card"><p class="font-quran quran-line">﴿لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">هذه الجملة إخبار بأن الجميع عبيده عز وجل، وفي ملكه، وتحت قهره وسلطانه. والذي يملك السماوات والأرض وما فيهما، يحفظهما وما فيهما بتدبيره، فلا يمكن أن ينام، وإلا لزالتا عن النظام.</p></div></div><div class="info-card aqeedah-card"><h3>المسألة العقدية</h3><div class="card-body"><p class="reader-line">كل من في السماوات والأرض في ملك الله عز وجل سواء؛ العقلاء وغير العقلاء، وكلهم تحت قهره وسلطانه.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">هذه الجملة بيان وتقرير لنفي السِّنة والنوم؛ لأن الذي يملك السماوات والأرض وما فيهما يحفظهما بتدبيره، فلا يمكن أن ينام، وإلا لزالتا عن النظام.</p>
+<p class="reader-line">قال بعضهم: بل هي تقرير وبيان مكمل لقوله: ﴿الْحَيُّ الْقَيُّومُ﴾، لكن النص رجح أن هذا يضعفه أنها لو كانت كذلك لجاءت موصولة بالواو؛ لأنها تعطف على الجملة السابقة. أما إذا قيل إنها تقرير لما قبلها من نفي السِّنة والنوم، فهي بمعناها ومن تكملتها، فلا تحتاج إلى واو.</p>
+<p class="reader-line">جمع السماوات وأفرد الأرض؛ فقيل: لما جمع السماوات اكتفى بجمع الأول عن جمع الثاني. وقيل: إن جمع السماوات سهل في اللفظ، لكن جمع الأرض أثقل كقولهم أراضون، فكان في ذلك طلب لخفة اللفظ. وقال أهل البلاغة: لعل السبب الإشارة إلى عظم السماوات في مقابل الأرض، فجمع السماوات لبيان عظمتها، وأفرد الأرض كأنها صغيرة بالنسبة إلى السماوات، أو كأنها جزء من السماوات.</p>
+<p class="reader-line">جاء التعبير بـ ما، مع أن في السماوات والأرض عقلاء وغير عقلاء؛ ففيهم الإنس والجن والملائكة، وفيهم غير عقلاء من بقية المخلوقات. فغلّبت الآية غير العقلاء لكثرتهم. وجاء في آيات أخرى التعبير بـ من تغليبًا للعقلاء لشرفهم.</p></div></div><div class="info-card tafsir-card"><h3>الشواهد</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿إِنْ كُلُّ مَنْ فِي السَّمَاوَاتِ وَالْأَرْضِ إِلَّا آتِي الرَّحْمَنِ عَبْدًا ۝ لَقَدْ أَحْصَاهُمْ وَعَدَّهُمْ عَدًّا ۝ وَكُلُّهُمْ آتِيهِ يَوْمَ الْقِيَامَةِ فَرْدًا﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿اللَّهُ الَّذِي خَلَقَ سَبْعَ سَمَاوَاتٍ وَمِنَ الْأَرْضِ مِثْلَهُنَّ﴾</p></div>
+<p class="reader-line">اللغات والمعاني</p>
+<p class="reader-line">جمع الأرض معروف في اللغة، ومنه الأراضين، وجاء في الأحاديث. وفي التعبير القرآني هنا أفردت الأرض وجمعت السماوات.</p>
+<div class="quran-mini"><p class="font-quran quran-line">﴿أَلَا إِنَّ لِلَّهِ مَنْ فِي السَّمَاوَاتِ وَمَنْ فِي الْأَرْضِ﴾</p></div></div></div><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">كل ما في السماوات والأرض لله، وفي ملكه وقهره وسلطانه، وهذا يقرر كمال قيوميته ونفي النوم عنه.</p></div></div></div></article>
+<article class="passage-card" id="p5"><div class="passage-number">05</div><div class="quran-card"><p class="font-quran quran-line">﴿مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">معنى الآية: من هذا الذي يشفع عند الله من هؤلاء؟ أي إن الذين في السماوات والذين في الأرض، وهم في ملك الله عز وجل، لا أحد منهم يشفع عند الله إلا بإذنه.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">من اسم استفهام، وذا في الأصل اسم إشارة بمعنى هذا، لكن قالوا في مثل هذا الأسلوب: هو ملغى؛ لأنه يجوز أن تقول: من يشفع عنده إلا بإذنه؟ أو تقول: ﴿مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ﴾. ومعنى كونه ملغى: أن من وذا جُعلا كالكلمة الواحدة للدلالة على الاستفهام.</p></div></div><div class="info-card aqeedah-card"><h3>المسائل العقدية</h3><div class="card-body"><p class="reader-line">في هذه الآية رد على المشركين الذين قالوا: ﴿مَا نَعْبُدُهُمْ إِلَّا لِيُقَرِّبُونَا إِلَى اللَّهِ زُلْفَى﴾؛ أي حتى لو صحت عبادتهم، فإنهم لا يملكون من الله عز وجل حق الشفاعة.</p>
+<p class="reader-line">بلغ من ملكه سبحانه وتعالى وكبريائه أنه لا أحد يتكلم يوم القيامة إلا من أذن له. كلهم يوم القيامة يقفون وعليهم الذل، ولا يتجرأ أحد منهم أن ينبس بكلمة حتى يؤذن له.</p>
+<p class="reader-line">ليس لأحد، كائنًا من كان، حق عند الله، أو إدلال على الله، أو مكانة عند الله تصل به إلى أن يشفع دون أن يأذن الله عز وجل له بالشفاعة. وإنما يأذن سبحانه وتعالى في يوم القيامة، في ذلك الموقف العظيم، بالشفاعة لمن أراد أن يظهر مكانته عند الله ومكانته في الآخرة، من النبيين والشهداء ونحوهم.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية</h3><div class="card-body"><p class="reader-line">جاءت الآية على أسلوب الاستفهام. فإن كان ذلك في حق المؤمنين فهو استفهام تقريري، أي يقرر ما فيها من معنى، كأنه قال: لا يشفع عنده أحد إلا بإذنه.</p>
+<p class="reader-line">وأما إذا كان في حق الكافرين المنكرين، فهو استفهام إنكاري توبيخي؛ لأنهم ظنوا أن شفاعة آلهتهم تنفعهم يوم القيامة، فجاءت الآية لتقرر أن هذه الشفاعة لا تنفعهم عند الله.</p></div></div><div class="info-card tafsir-card"><h3>الفوائد الإيمانية</h3><div class="card-body"><p class="reader-line">هذه الجملة تقطع رجاء الكافرين في الشفاعة التي يظنونها، وتقرر أن الشفاعة إنما تكون لمن أخلص التوحيد وبإذن الله، وفيها بيان عظمة الله عز وجل وجلاله وكبريائه.</p></div></div><div class="info-card tafsir-card"><h3>الشواهد القرآنية</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿مَا نَعْبُدُهُمْ إِلَّا لِيُقَرِّبُونَا إِلَى اللَّهِ زُلْفَى﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿لَا يَتَكَلَّمُونَ إِلَّا مَنْ أَذِنَ لَهُ الرَّحْمَنُ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿وَكَمْ مِنْ مَلَكٍ فِي السَّمَاوَاتِ لَا تُغْنِي شَفَاعَتُهُمْ شَيْئًا إِلَّا مِنْ بَعْدِ أَنْ يَأْذَنَ اللَّهُ لِمَنْ يَشَاءُ وَيَرْضَى﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿وَلَا يَشْفَعُونَ إِلَّا لِمَنِ ارْتَضَى﴾</p></div></div></div><div class="info-card hadith-card"><h3>حديث الشفاعة</h3><div class="card-body"><p class="reader-line">حتى النبي صلى الله عليه وسلم، وهو أكرم الخلق على الله، لا يبادر بالشفاعة من نفسه. جاء في حديث الشفاعة المشهور، في الشفاعة العظمى، أنه صلى الله عليه وسلم قال: «فآتي تحت العرش، فأخر ساجدًا، فأدعو بما شاء الله، ثم يقال: ارفع رأسك، وقل تُسمع، واشفع تُشفّع». فحينئذ يؤذن له بالشفاعة فيشفع.</p></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><details class="info-card grammar-card"><summary><span>الإعراب</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">لا شفاعة عند الله إلا بإذنه، وهذا رد على ظن المشركين، وبيان لعظمة الله وكبريائه يوم القيامة.</p></div></div></div></article>
+<article class="passage-card" id="p6"><div class="passage-number">06</div><div class="quran-card"><p class="font-quran quran-line">﴿يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">أي يعلم ماضيهم ومستقبلهم؛ فما خلفهم هو الماضي، وما بين أيديهم هو المستقبل. فإذا كان سبحانه يعلم ماضيهم ومستقبلهم، فلا شك أنه يعلم حالهم في الوقت الحاضر.</p>
+<p class="reader-line">الماضي يشمل دنياهم وما عملوا فيها وما يعملون، وما خُلق فيها وما يُخلق. والمستقبل يشمل الآخرة وما فيها من حساب واستقرار.</p></div></div><div class="info-card aqeedah-card"><h3>المسألة العقدية</h3><div class="card-body"><p class="reader-line">من أحاط علمه بأحوال الخلق كلها، ماضيها وحاضرها ومستقبلها، فهو يعلم المستوجب للشفاعة من غيره. فهو يعلم كل شيء، ويعلم المستحق للشفاعة.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">العلاقة بين هذه الجملة وما قبلها أنه سبحانه يعلم كل شيء، ويعلم المستحق للشفاعة. ولهذا جاءت هذه الجملة مفصولة من غير واو؛ لأنها تكملة للآية السابقة، كأنها تدليل على استحقاقه عز وجل أن تكون الشفاعة بإذنه؛ لأنه يعلم من يستحقها ومن لا يستحقها.</p>
+<p class="reader-line">الضمير في أيديهم وخلفهم يعود إلى قوله: ﴿مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ﴾، ومع أن ما يعبر بها غالبًا عن غير العاقل، عاد الضمير إليها تغليبًا للعقلاء الذين فيها من الإنس والجن والملائكة؛ لأنهم هم الذين يتصور منهم أن يأذن الله عز وجل لبعضهم بالشفاعة.</p></div></div><div class="info-card hadith-card"><h3>الشاهد</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿وَمَا نَتَنَزَّلُ إِلَّا بِأَمْرِ رَبِّكَ ۖ لَهُ مَا بَيْنَ أَيْدِينَا وَمَا خَلْفَنَا وَمَا بَيْنَ ذَٰلِكَ ۚ وَمَا كَانَ رَبُّكَ نَسِيًّا﴾</p></div></div></div><div class="info-card lang-card"><h3>الوقفات اللغوية</h3><div class="card-body"><p class="reader-line">ضمير هم يستعمل في العقلاء، ولا يستعمل في غير العقلاء. فغير العقلاء يستعمل معهم ضمير ها، والعقلاء يستعمل معهم ضمير هم. تقول: الرجال رأيتهم وأكرمتهم، ولا تقول في الكتب: قرأتهم، بل تقول: قرأتها.</p>
+<p class="reader-line">في الجملة السابقة قوله تعالى: ﴿مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ﴾، ومن اسم استفهام يستعمل للعاقل، فهو أيضًا اعتبر العقلاء.</p></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><details class="info-card grammar-card"><summary><span>الإعراب</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">علم الله محيط بماضي الخلق وحاضرهم ومستقبلهم، وبه يعلم من يستحق الشفاعة ومن لا يستحقها.</p></div></div></div></article>
+<article class="passage-card" id="p7"><div class="passage-number">07</div><div class="quran-card"><p class="font-quran quran-line">﴿وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">لا يطلع أحد على شيء من الأمور التي يعلمها الله عز وجل إلا بما أعلمه الله به وأطلعه عليه.</p>
+<p class="reader-line">ويحتمل أن يكون المراد: لا يطلعون على شيء من علمه، أي من علم ذاته، ومن علم أسمائه وصفاته وذاته عز وجل، إلا بما أطلعهم عليه.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">يحيطون: يقال لكل من أحرز شيئًا وبلغ علمه أقصى ذلك الشيء: قد أحاط به.</p>
+<p class="reader-line">قوله تعالى: ﴿بِشَيْءٍ مِنْ عِلْمِهِ﴾ أي من معلوم الله عز وجل، وهذا هو الظاهر.</p></div></div><div class="info-card aqeedah-card"><h3>المسألة العقدية</h3><div class="card-body"><p class="reader-line">لا نعلم شيئًا عن الله عز وجل إلا من طريق الوحي؛ فهو غيب، فلا نحيط بشيء من ذات الله عز وجل، ولا بأسمائه وصفاته، إلا بما أخبرنا به من طريق الوحي الكريم.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">هنا جاء الوصل بالواو، وقد عُطفت هذه الجملة على الجملة السابقة؛ لأن مجموع الجملتين يدل على تفرده سبحانه وتعالى بعلم من يستحق الشفاعة من غيره. فهو يعلم، وهم لا يعلمون. الله يعلم، وهم لا يحيطون.</p>
+<p class="reader-line">كأنه قال: والله يعلم من يستحق الشفاعة، وهم لا يعلمون. فهذه الجملة معطوفة على الجملة السابقة؛ لأن مجموعهما تعليل وبيان للكلام السابق على الشفاعة.</p></div></div><div class="info-card hadith-card"><h3>الشاهد</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿وَلَا يُحِيطُونَ بِهِ عِلْمًا﴾</p></div></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><details class="info-card grammar-card"><summary><span>الإعراب</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">الله يعلم، والخلق لا يحيطون بشيء من علمه إلا بما شاء وأطلعهم عليه.</p></div></div></div></article>
+<article class="passage-card" id="p8"><div class="passage-number">08</div><div class="quran-card"><p class="font-quran quran-line">﴿وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">هنا جاء النص على الكرسي. ومعنى وسع: احتمل وأطاق وشمل. وهذه الجملة كأنها تأكيد للجملة السابقة؛ فإذا كان كرسيه عز وجل قد وسع السماوات والأرض وما بينهما، فكيف بخالقه جل جلاله؟</p>
+<p class="reader-line">أي إنه يعلم كل ما في السماوات والأرض، ويعلم من يستحق الشفاعة ومن لا يستحقها.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">الكرسي في اللغة معروف. والياء المشددة في قولهم الكرسي ليست للنسب، وإنما هي من بنية الاسم، وهو مأخوذ من الكَرْس، ومعناه وضع الشيء بعضه فوق بعض؛ لأن الكرسي يتركب من خشب أو حديد أو غير ذلك، يوضع بعضه على بعض.</p>
+<p class="reader-line">ومنه الكراسة أيضًا، فهي من الأصل نفسه؛ لأنها أوراق يوضع بعضها على بعض.</p></div></div><div class="info-card aqeedah-card"><h3>المسائل العقدية</h3><div class="card-body"><p class="reader-line">قيل: الكرسي هو العرش نفسه، وجاء هذا عن بعض السلف، لكن هذا التفسير فيه ضعف. والأصح أنه موضع قدمي الرحمن من العرش، كما صح عن ابن عباس رضي الله عنهما وغيره.</p>
+<p class="reader-line">مثل ذلك لا يمكن أن يقال بمجرد الرأي؛ فبما أنه صح عن ابن عباس، فالظاهر أنه أخذه عن النبي صلى الله عليه وسلم. وقد جاءت أحاديث فيها التصريح بذلك عن النبي صلى الله عليه وسلم، لكن إسنادها ضعيف، أما الإسناد إلى ابن عباس فثابت صحيح، ويكفي في الدلالة.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">هذه الجملة الشريفة كأنها تأكيد للجملة السابقة: ﴿يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ﴾.</p>
+<p class="reader-line">فإذا كان كرسيه عز وجل قد وسع السماوات والأرض وما بينهما، فكيف بخالقه جل جلاله؟</p></div></div><div class="info-card tafsir-card"><h3>الشواهد والآثار</h3><div class="card-body"><p class="reader-line">جاء عن السدي، وهو من كبار المفسرين من السلف، بسند حسن أنه قال: «السماوات والأرض في جوف الكرسي، والكرسي بين يدي العرش».</p>
+<p class="reader-line">وجاء في الأثر: «ما السماوات السبع في الكرسي إلا كحلقة ملقاة في أرض فلاة، وإن فضل العرش على الكرسي كفضل الفلاة على تلك الحلقة».</p>
+<p class="reader-line">وهذا الأثر فيه أيضًا رد على القول السابق الذي قال: إن الكرسي هو العرش؛ لأنه يفرّق بين العرش والكرسي.</p></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><details class="info-card grammar-card"><summary><span>الإعراب</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">كرسيه سبحانه وسع السماوات والأرض، وذلك يؤكد سعة علمه وسلطانه، ويفرق النص بين الكرسي والعرش.</p></div></div></div></article>
+<article class="passage-card" id="p9"><div class="passage-number">09</div><div class="quran-card"><p class="font-quran quran-line">﴿وَلَا يَئُودُهُ حِفْظُهُمَا﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">أي إن الله عز وجل لا يثقله حفظ السماوات والأرض وما فيهما ومن بينهما، بل ذلك سهل عليه، يسير لديه.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">يؤوده: يثقله، ويتعبه، ويشق عليه. يقال: آده الشيء يؤوده أودًا وإيادًا، إذا أتعبه وأثقله.</p></div></div><div class="info-card aqeedah-card"><h3>المسائل العقدية والتربوية</h3><div class="card-body"><p class="reader-line">هو القائم على كل نفس بما كسبت، الرقيب على جميع الأشياء. فلا يعزب عنه شيء، ولا يغيب عنه شيء. والأشياء كلها حقيرة بين يديه، متواضعة، صغيرة بالنسبة إليه، محتاجة إليه، وهو الغني الفعال لما يريد، الذي لا يُسأل عما يفعل وهم يُسألون.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">مناسبة هذه الجملة لما قبلها أن الله عز وجل لما ذكر أن كرسيه وسع السماوات والأرض، ذكر هنا أن ذلك لا يثقله ولا يشق عليه.</p>
+<p class="reader-line">فالكرسي وسع السماوات والأرض، والكرسي شيء ضئيل بالنسبة إلى العرش، وكل ذلك لا يثقله عز وجل ولا يشق عليه، بل هو عز وجل الذي أمسك السماوات والأرض أن تزولا من غير تعب ولا نصب.</p></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div><details class="info-card grammar-card"><summary><span>الإعراب</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">حفظ السماوات والأرض لا يثقل الله ولا يشق عليه، بل هو القائم الرقيب على جميع الأشياء.</p></div></div></div></article>
+<article class="passage-card" id="p10"><div class="passage-number">10</div><div class="quran-card"><p class="font-quran quran-line">﴿وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾</p></div><div class="passage-grid"><div class="info-card tafsir-card"><h3>المعنى الإجمالي</h3><div class="card-body"><p class="reader-line">هذه الجملة كأنها جاءت تعليلًا في خاتمة الآية لكل ما سبق؛ كأنه قال: لأنه العلي العظيم.</p></div></div><div class="info-card lang-card"><h3>شرح الألفاظ</h3><div class="card-body"><p class="reader-line">العلي صفة مشبهة على وزن فعيل، من علا يعلو علوًا، فهو عالٍ وعلي. والعظيم صفة مشبهة على وزن فعيل، من عظم قدره يعظم عظمًا.</p></div></div><div class="info-card aqeedah-card"><h3>المسائل العقدية</h3><div class="card-body"><p class="reader-line">علو الله عند أهل السنة والجماعة يشمل: علو الذات، وعلو القدر، وعلو القهر.</p>
+<p class="reader-line">اشتملت الآية على إحاطة ملكه، وإحاطة علمه، وسعة سلطانه، وجلاله، ومجده، وعظمته، وكبريائه، وعلوه على جميع مخلوقاته.</p></div></div><div class="info-card reflect-card"><h3>النكت البلاغية والمناسبة</h3><div class="card-body"><p class="reader-line">جاءت هذه الجملة تعليلًا في خاتمة الآية لكل ما سبق، ولهذا عُطفت بالواو؛ لأنها من تمام الجملة السابقة، وليست مستقلة عنها من كل وجه.</p></div></div><div class="info-card tafsir-card"><h3>الفوائد الإيمانية والتربوية</h3><div class="card-body"><p class="reader-line">في هذه الآية التحذير من الطغيان، ومن التعاظم، ومن التكبر، لقوله تعالى: ﴿وَهُوَ الْعَلِيُّ الْعَظِيمُ﴾.</p>
+<p class="reader-line">فإن كنت متعاليًا في نفسك، فاذكر علو الله عز وجل. وإن كنت عظيمًا في نفسك، فاذكر عظمة الله. وإن كنت كبيرًا في نفسك، فاذكر كبرياء الله سبحانه وتعالى.</p></div></div><div class="info-card hadith-card"><h3>الشاهد</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿فَإِنْ أَطَعْنَكُمْ فَلَا تَبْغُوا عَلَيْهِنَّ سَبِيلًا ۗ إِنَّ اللَّهَ كَانَ عَلِيًّا كَبِيرًا﴾</p></div></div></div><div class="info-card lang-card"><h3>تفاصيل لغوية متقدمة</h3><div class="card-body"><p class="reader-line">الإعراب والصرف</p></div></div><div class="info-card benefit-card"><h3>خلاصة المقطع</h3><div class="card-body"><p class="reader-line">ختمت الآية بعلو الله وعظمته، تعليلًا لما سبق وتحذيرًا من التكبر والطغيان.</p></div></div></div></article></section>
+<section id="features" class="flex flex-col gap-10"><div class="flex flex-col gap-3"><p class="section-kicker text-sm font-semibold text-benefit-accent">الخصائص العامة</p><h2 class="text-4xl font-bold text-slate-950 dark:text-white md:text-5xl">خصائص وردت في النص</h2></div><div class="grid gap-6 lg:grid-cols-3"><div class="info-card tafsir-card"><h3>خصائص وردت في النص</h3><div class="card-body"><p class="reader-line muted">اضغط للعرض</p></div></div>
+<div class="info-card reflect-card"><h3>الخصائص البلاغية</h3><div class="card-body"><p class="reader-line">هذه الآية ليست طويلة وليست قصيرة، ومع ذلك لا يكاد يتعب قارئها من كثرة ترديدها وتكرارها؛ لأن مقاطعها قصيرة تكاد تكون متساوية، وكأن هذه الآية مهيأة لكثرة التكرار والترديد.</p>
+<p class="reader-line">فيها إيجاز، بل قالوا: فيها إيجاز الإيجاز. فكل المعاني التي ذكرها النص عُبر عنها بجمل موجزة، ومع ذلك يشعر قارئها أنها ممتلئة بالمعاني وفخمة.</p>
+<p class="reader-line">ظهر في النص باب الوصل والفصل، وبيان الجمل المفسرة لما قبلها، وترتيب السِّنة قبل النوم على قياس المبالغة والترقي أو موافقة الواقع، وجمع السماوات وإفراد الأرض، والتعبير بـ ما تغليبًا لغير العقلاء وبـ من في موضع آخر تغليبًا للعقلاء.</p></div></div>
+<div class="info-card tafsir-card"><h3>الخصائص الموضوعية</h3><div class="card-body"><p class="reader-line">في هذه الآية وحدة موضوعية؛ فكلها، كما ورد في النص، تفسير لقوله تعالى: ﴿الْحَيُّ الْقَيُّومُ﴾، ولكن بأكثر من طريقة.</p>
+<p class="reader-line">فهي تفسير وبيان للحي القيوم بنفي ما يضاد هاتين الصفتين من صفات الغفلة والضعف، كالسِّنة والنوم، وبيان لهما بإثبات ما يناسبهما من كمال الملك والتصرف في جميع الخلق، وأنه لا حق لأحد على الله ولا إدلال.</p>
+<p class="reader-line">وفيها إثبات كمال علمه في الماضي والحاضر والمستقبل، وفيها أنه سبحانه هو العلي في صفاته، العظيم المتناهي في العظمة.</p></div></div>
+<div class="info-card aqeedah-card"><h3>الأسماء والصفات</h3><div class="card-body"><p class="reader-line">فيها إثبات خمسة أسماء بالنص، وهي: الله، الحي، القيوم، العلي، العظيم. وفيها أيضًا ما تضمنته هذه الأسماء من صفات.</p>
+<p class="reader-line">هذه الآية بمفردها عقيدة في أسماء الله وصفاته، متضمنة لجميع الأسماء الحسنى والصفات العلا، كما أشار النص إلى ذلك.</p>
+<p class="reader-line">تضمنت اسم الله الأعظم، على قول مشهور عند العلماء، في قوله تعالى: ﴿الْحَيُّ الْقَيُّومُ﴾؛ لأنهما تضمنا جميع الأسماء وجميع الصفات.</p></div></div>
+<div class="info-card tafsir-card"><h3>ما اشتملت عليه آية الكرسي</h3><div class="card-body"><p class="reader-line">اشتملت على جميع أنواع التوحيد: توحيد الربوبية، وتوحيد الألوهية، وتوحيد الأسماء والصفات.</p>
+<p class="reader-line">واشتملت على إحاطة ملكه، وإحاطة علمه، وسعة سلطانه، وجلاله، ومجده، وعظمته، وكبريائه، وعلوه على جميع مخلوقاته.</p>
+<p class="reader-line">فيها إبطال حجة الخصم بالحجة العقلية؛ فقد أبطلت حجة المشركين الذين أشركوا بالله وجعلوا معه آلهة، بنفي الحياة والقيومية عن هذه الآلهة، وهذا يستلزم نفي الربوبية والألوهية عنها؛ لأنها لا تقوم بنفسها، فضلًا عن أن تقوم بغيرها.</p></div></div>
+<div class="info-card benefit-card"><h3>إثبات القيومية والافتقار</h3><div class="card-body"><p class="reader-line">في هذه الآية إثبات القيومية لله عز وجل، وهذا الوصف لا يكون لمخلوق أبدًا؛ لأنه ما من مخلوق إلا وهو محتاج إلى غيره بوجه من الوجوه.</p>
+<p class="reader-line">الأب محتاج إلى الأولاد، والأولاد محتاجون إلى الأب. والزوجة محتاجة إلى زوجها، والزوج محتاج إلى زوجته. والمسؤول محتاج إلى العمال، والعمال محتاجون إلى المسؤول. والإنسان يحتاج إلى المال، والمال يحتاج إلى الإنسان في حفظه وتنميته.</p>
+<p class="reader-line">كل مخلوق محتاج إلى مخلوق آخر بوجه من الوجوه، والجميع محتاجون إلى الله عز وجل. فمن كان قائمًا على غيره، سواء كان قائمًا على عاقل أو على غير عاقل، كالأعمال والمسؤوليات العظيمة، فهو في الحقيقة ليس قائمًا عليها من جميع الوجوه، بل في دائرة ضيقة.</p></div></div>
+<div class="info-card tafsir-card"><h3>شواهد عامة</h3><div class="card-body"><div class="quran-mini"><p class="font-quran quran-line">﴿يَا أَيُّهَا النَّاسُ أَنْتُمُ الْفُقَرَاءُ إِلَى اللَّهِ ۖ وَاللَّهُ هُوَ الْغَنِيُّ الْحَمِيدُ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿أَفَمَنْ هُوَ قَائِمٌ عَلَىٰ كُلِّ نَفْسٍ بِمَا كَسَبَتْ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿وَعَنَتِ الْوُجُوهُ لِلْحَيِّ الْقَيُّومِ﴾</p></div>
+<div class="quran-mini"><p class="font-quran quran-line">﴿لَا تُدْرِكُهُ الْأَبْصَارُ وَهُوَ يُدْرِكُ الْأَبْصَارَ﴾</p></div></div></div>
+<div class="info-card tafsir-card"><h3>عدم الإحاطة بالله علمًا</h3><div class="card-body"><p class="reader-line">في هذه الآية أن الله عز وجل لا يُحاط به علمًا، كما لا يُحاط به سمعًا، ولا يُحاط به بصرًا، كما قال تعالى: ﴿لَا تُدْرِكُهُ الْأَبْصَارُ وَهُوَ يُدْرِكُ الْأَبْصَارَ﴾، وقال تعالى: ﴿وَلَا يُحِيطُونَ بِهِ عِلْمًا﴾، عز وجل وتقدس.</p></div></div>
+<div class="info-card tafsir-card"><h3>أسرار التسمية وما يتعلق بها</h3><div class="card-body"><p class="reader-line">سُمّيت آية الكرسي لذكر الكرسي فيها، ولم يُذكر الكرسي في القرآن الكريم إلا في هذه الآية.</p></div></div>
+<details class="info-card grammar-card"><summary><span>إعراب آية الكرسي إجمالًا</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details>
+<details class="info-card grammar-card"><summary><span>عرض الإعراب الإجمالي</span><svg class="chevron" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="detail-body"><p class="reader-line muted">اضغط للعرض</p></div></details></div></section>
+<section id="summary" class="flex flex-col gap-10"><div class="flex flex-col gap-3"><p class="section-kicker text-sm font-semibold text-benefit-accent">الخلاصة النهائية</p><h2 class="text-4xl font-bold text-slate-950 dark:text-white md:text-5xl">ما يخرج به القارئ</h2></div><div class="rounded-[32px] border border-white/70 bg-slate-950 p-8 text-white shadow-apple-hover md:p-14"><div class="grid gap-5"><div class="info-card tafsir-card"><h3>ما يخرج به القارئ</h3><div class="card-body"><p class="reader-line">آية الكرسي آية مفردة في سورة البقرة، وهي أعظم آية في القرآن الكريم، وسُمّيت بهذا الاسم لذكر الكرسي فيها.</p>
+<p class="reader-line">حوت الآية كثيرًا من معاني التوحيد والعظمة وسعة الصفات لله عز وجل؛ فافتتحت بتفرده بالألوهية، ثم قررت كمال حياته وقيوميته، ثم نفت عنه السِّنة والنوم، ثم بينت أن له ما في السماوات وما في الأرض، وأن الشفاعة لا تكون إلا بإذنه.</p>
+<p class="reader-line">ثم بينت إحاطة علمه بالماضي والحاضر والمستقبل، وأن الخلق لا يحيطون بشيء من علمه إلا بما شاء، وأن كرسيه وسع السماوات والأرض، وأن حفظهما لا يثقله، وختمت بأنه العلي العظيم.</p>
+<p class="reader-line">اشتملت الآية على جميع أنواع التوحيد: توحيد الربوبية، وتوحيد الألوهية، وتوحيد الأسماء والصفات، وعلى إحاطة ملكه، وإحاطة علمه، وسعة سلطانه، وجلاله، ومجده، وعظمته، وكبريائه، وعلوه على جميع مخلوقاته.</p>
+<p class="reader-line">من أبرز ما ظهر في النص أن الجمل جاءت مترابطة في البيان والتفسير، وأن البلاغة فيها تخدم المعنى العقدي؛ فالفصل والوصل، والترقي من السِّنة إلى النوم، وجمع السماوات وإفراد الأرض، والتعبير بما ومن، وتناسق المقاطع وإيجازها، كلها وجوه بيانية وردت في النص لخدمة المعنى.</p>
+<p class="reader-line">أهم ما يخرج به القارئ هو العناية بقراءتها قراءة صحيحة، وكونها من أذكار الصباح والمساء والنوم، واستحضار ما فيها من توحيد الله وعظمته وكبريائه، والتحذير من الطغيان والتعاظم والتكبر.</p></div></div></div></div></section>
+</main>
+<script>
+const root=document.documentElement;
+const themeToggle=document.getElementById('themeToggle');
+const fontPlus=document.getElementById('fontPlus');
+const fontMinus=document.getElementById('fontMinus');
+const toggleDetails=document.getElementById('toggleDetails');
+const progressBar=document.querySelector('.read-progress');
+const savedTheme=localStorage.getItem('kursi-theme');
+const savedFont=Number(localStorage.getItem('kursi-font')||18);
+if(savedTheme==='dark') root.classList.add('dark');
+const setReaderSize=(size)=>{const nextSize=Math.min(22,Math.max(16,size));document.body?.style.setProperty('--reader-size',`${nextSize}px`);localStorage.setItem('kursi-font',String(nextSize));};
+setReaderSize(savedFont);
+themeToggle?.addEventListener('click',()=>{root.classList.toggle('dark');localStorage.setItem('kursi-theme',root.classList.contains('dark')?'dark':'light');});
+fontPlus?.addEventListener('click',()=>setReaderSize(Number(localStorage.getItem('kursi-font')||18)+1));
+fontMinus?.addEventListener('click',()=>setReaderSize(Number(localStorage.getItem('kursi-font')||18)-1));
+toggleDetails?.addEventListener('click',()=>{const details=Array.from(document.querySelectorAll('details.grammar-card'));const open=details.some(d=>!d.open);details.forEach(d=>d.open=open);});
+const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;const progress=max>0?(window.scrollY/max)*100:0;progressBar?.style.setProperty('--read-progress',`${Math.min(100,Math.max(0,progress))}%`);};
+const currentObserver=new IntersectionObserver((entries)=>{entries.forEach(entry=>entry.target.classList.toggle('is-current',entry.isIntersecting));},{rootMargin:'-35% 0px -45% 0px',threshold:.01});
+document.querySelectorAll('.passage-card')?.forEach(article=>currentObserver.observe(article));
+document.querySelectorAll('.reader-line')?.forEach(p=>p.addEventListener('click',()=>{document.querySelectorAll('.focus-line')?.forEach(item=>item.classList.remove('focus-line'));p.classList.add('focus-line');}));
+window.addEventListener('scroll',updateProgress,{passive:true});window.addEventListener('resize',updateProgress);updateProgress();
+</script>
 </body>
 </html>
